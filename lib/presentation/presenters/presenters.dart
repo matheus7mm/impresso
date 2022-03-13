@@ -1,1 +1,1 @@
-export './notifications_presenter.dart';
+export './stream_notifications_presenter.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './../../../../presentation/presentation.dart';
 import './../../../../domain/domain.dart';
 
+import './../notifications_presenter.dart';
 import './notification_type_tile/notification_type_tile.dart';
 
 class NotificationTypeListWidget extends StatefulWidget {

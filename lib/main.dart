@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       title: 'IMPRESSO Test',
       debugShowCheckedModeBanner: false,
       home: NotificationsScreen(
-        presenter: NotificationsPresenter(
+        presenter: StreamNotificationsPresenter(
           fetchNotificationType: LocalFetchNotificationType(
             repository: notificationTypeRepository,
           ),

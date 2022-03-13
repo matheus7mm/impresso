@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../theme/theme.dart';
-import '../../../../../presentation/presentation.dart';
+import './../../notifications_presenter.dart';
 
-import '../avatar.dart';
+import './../avatar.dart';
 
 class NotificationItem extends StatefulWidget {
   final String message;

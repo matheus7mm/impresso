@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import './../../domain/domain.dart';
+import './../../ui/screens/notifications/notifications.dart';
 
 class NotificationsState {
   NotificationsState({
@@ -12,7 +13,7 @@ class NotificationsState {
   List<NotificationTypeEntity> notificationTypeList;
 }
 
-class NotificationsPresenter {
+class StreamNotificationsPresenter implements NotificationsPresenter {
   final FetchNotificationType fetchNotificationType;
   final SetNotificationAsRead setNotificationAsRead;
   final LoadNotificationTypeUnreadCount loadNotificationTypeUnreadCount;
@@ -20,7 +21,7 @@ class NotificationsPresenter {
 
   static late NotificationsState state;
 
-  NotificationsPresenter({
+  StreamNotificationsPresenter({
     required this.fetchNotificationType,
     required this.setNotificationAsRead,
     required this.loadNotificationTypeUnreadCount,
@@ -34,8 +35,10 @@ class NotificationsPresenter {
 
   final _controller = StreamController<NotificationsState>.broadcast();
 
+  @override
   int get selectedNotificationTypeId => state.selectedNotificationTypeId;
 
+  @override
   void addSelectedNotificationTypeId(int id) {
     state.selectedNotificationTypeId = id;
 
@@ -47,12 +50,14 @@ class NotificationsPresenter {
 
   void _update() => _controller.add(state);
 
+  @override
   Stream<int> get selectedNotificationTypeIdStream => _controller.stream
       .map(
         (state) => state.selectedNotificationTypeId,
       )
       .distinct();
 
+  @override
   Stream<NotificationTypeEntity> notificationTypeStream({
     required int notificationTypeId,
   }) =>
@@ -64,6 +69,7 @@ class NotificationsPresenter {
           )
           .distinct();
 
+  @override
   Stream<int> unreadNotificationsCountStream({
     required int notificationTypeId,
   }) =>
@@ -76,9 +82,11 @@ class NotificationsPresenter {
           )
           .distinct();
 
+  @override
   List<NotificationTypeEntity> get getNotificationTypeList =>
       fetchNotificationType.fetchAll();
 
+  @override
   void addNotificationAsRead({
     required int notificationTypeId,
     required int notificationId,
@@ -97,6 +105,7 @@ class NotificationsPresenter {
     _update();
   }
 
+  @override
   void updateNotificationTypeListUnreadCount() {
     for (final notificationType in getNotificationTypeList) {
       loadNotificationTypeUnreadCount.load(
@@ -105,6 +114,7 @@ class NotificationsPresenter {
     }
   }
 
+  @override
   void dispose() {
     _controller.close();
   }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './.././../../../../domain/domain.dart';
-import './.././../../../../presentation/presentation.dart';
-import '../../../../theme/theme.dart';
+import './../../../../theme/theme.dart';
+import './../../notifications_presenter.dart';
 
 class NotificationTypeTileTitle extends StatelessWidget {
   final NotificationTypeEntity notificationType;

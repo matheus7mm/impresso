@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './../../../presentation/presentation.dart';
-
 import './../../theme/theme.dart';
 
 import './widgets/widgets.dart';
 import './notifications_config.dart';
+import './notifications_presenter.dart';
 
 class NotificationsScreen extends StatefulWidget {
   final NotificationsPresenter presenter;
