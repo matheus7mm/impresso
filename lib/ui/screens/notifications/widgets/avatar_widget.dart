@@ -3,11 +3,11 @@ import 'package:flutter_svg/svg.dart';
 
 import './../../../theme/theme.dart';
 
-class Avatar extends StatelessWidget {
+class AvatarWidget extends StatelessWidget {
   final String? url;
   final double avatarSize;
 
-  const Avatar({
+  const AvatarWidget({
     Key? key,
     this.url,
     this.avatarSize = 45.0,

@@ -3,9 +3,9 @@ import 'package:flutter_svg/svg.dart';
 
 import './../../../theme/theme.dart';
 
-import './avatar.dart';
+import './avatar_widget.dart';
 
-class Header extends StatelessWidget {
+class HeaderWidget extends StatelessWidget {
   final String fullName;
   final String pictureUrl;
   final String role;
@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
   final String place;
   final double pictureSize;
 
-  const Header({
+  const HeaderWidget({
     Key? key,
     required this.fullName,
     required this.pictureUrl,
@@ -90,7 +90,7 @@ class Header extends StatelessWidget {
           ),
           Flexible(
             flex: 4,
-            child: Avatar(
+            child: AvatarWidget(
               url: pictureUrl,
               avatarSize: pictureSize,
             ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class SvgIcon extends StatelessWidget {
+class SvgIconWidget extends StatelessWidget {
   final String assetPath;
   final double iconSize;
 
-  const SvgIcon({
+  const SvgIconWidget({
     Key? key,
     required this.assetPath,
     this.iconSize = 36,

@@ -60,7 +60,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Header(
+              HeaderWidget(
                 fullName: 'Alexandra van Wolfeschlegelsteinzuipoa',
                 pictureUrl: 'https://pbs.twimg.com/media/EeoixBkWoAEphkQ.jpg',
                 role: 'Pharmaceutical Science Specialisto',

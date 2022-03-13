@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './../../../../domain/domain.dart';
 
 import './../notifications_presenter.dart';
-import './notification_type_tile/notification_type_tile.dart';
+import './notification_type_tile/notification_type_tile_widget.dart';
 
 class NotificationTypeListWidget extends StatefulWidget {
   final NotificationsPresenter presenter;
@@ -37,7 +37,7 @@ class _NotificationTypeListWidgetState
     return StreamBuilder<int>(
       stream: widget.presenter.selectedNotificationTypeIdStream,
       builder: (context, snapshot) {
-        List<NotificationTypeTile> notificationTileList = [];
+        List<NotificationTypeTileWidget> notificationTileList = [];
 
         int selectedNotificationTypeId =
             widget.presenter.getNotificationTypeList.first.id;
@@ -53,7 +53,7 @@ class _NotificationTypeListWidgetState
           final int id = notificationTypeList[i].id;
 
           notificationTileList.add(
-            NotificationTypeTile(
+            NotificationTypeTileWidget(
               key: GlobalKey(),
               notificationType: notificationTypeList[i],
               showSidedBorder: i == 0 ? false : true,

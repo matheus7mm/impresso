@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../theme/theme.dart';
+import './../../../../theme/theme.dart';
 import './../../notifications_presenter.dart';
 
-import './../avatar.dart';
+import './../avatar_widget.dart';
 
-class NotificationItem extends StatefulWidget {
+class NotificationItemWidget extends StatefulWidget {
   final String message;
   final String time;
   final bool hasBeenRead;
@@ -15,7 +15,7 @@ class NotificationItem extends StatefulWidget {
   final int notificationTypeId;
   final int notificationId;
 
-  const NotificationItem({
+  const NotificationItemWidget({
     Key? key,
     required this.message,
     required this.time,
@@ -26,10 +26,10 @@ class NotificationItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<NotificationItem> createState() => _NotificationItemState();
+  State<NotificationItemWidget> createState() => _NotificationItemState();
 }
 
-class _NotificationItemState extends State<NotificationItem> {
+class _NotificationItemState extends State<NotificationItemWidget> {
   bool hasBeenRead = true;
 
   @override
@@ -69,7 +69,7 @@ class _NotificationItemState extends State<NotificationItem> {
         ),
       ),
       child: ListTile(
-        leading: Avatar(url: widget.url),
+        leading: AvatarWidget(url: widget.url),
         title: Text(
           widget.message,
           style: style,

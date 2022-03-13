@@ -6,10 +6,10 @@ import './../../../../../domain/entities/entities.dart';
 import '../../../../theme/theme.dart';
 
 import './../../notifications_config.dart';
-import './notification_type_tile_title.dart';
-import './notification_item.dart';
+import './notification_type_tile_title_widget.dart';
+import './notification_item_widget.dart';
 
-class NotificationTypeTile extends StatefulWidget {
+class NotificationTypeTileWidget extends StatefulWidget {
   final bool showSidedBorder;
   final NotificationTypeEntity notificationType;
   final double expandedHeight;
@@ -18,7 +18,7 @@ class NotificationTypeTile extends StatefulWidget {
   final void Function(bool)? onExpansionChanged;
   final bool showBottomBorder;
 
-  const NotificationTypeTile({
+  const NotificationTypeTileWidget({
     Key? key,
     required this.notificationType,
     required this.expandedHeight,
@@ -30,10 +30,11 @@ class NotificationTypeTile extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<NotificationTypeTile> createState() => _NotificationTypeTileState();
+  State<NotificationTypeTileWidget> createState() =>
+      _NotificationTypeTileState();
 }
 
-class _NotificationTypeTileState extends State<NotificationTypeTile> {
+class _NotificationTypeTileState extends State<NotificationTypeTileWidget> {
   final ExpandableController controller = ExpandableController();
   final ScrollController scrollController = ScrollController();
 
@@ -111,7 +112,7 @@ class _NotificationTypeTileState extends State<NotificationTypeTile> {
                 ),
                 header: SizedBox(
                   height: NotificationsConfig.collapsedNotificationTypeStack,
-                  child: NotificationTypeTileTitle(
+                  child: NotificationTypeTileTitleWidget(
                     notificationType: widget.notificationType,
                     textColor: controller.expanded == true
                         ? kNotificationTileExpandedTextColor
@@ -141,7 +142,7 @@ class _NotificationTypeTileState extends State<NotificationTypeTile> {
                         itemBuilder: (BuildContext context, int index) {
                           return ListTileTheme(
                             dense: false,
-                            child: NotificationItem(
+                            child: NotificationItemWidget(
                               key: GlobalKey(),
                               message: widget.notificationType
                                   .notifications[index].message,

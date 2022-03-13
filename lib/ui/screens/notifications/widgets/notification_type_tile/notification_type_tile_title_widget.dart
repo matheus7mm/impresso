@@ -5,11 +5,11 @@ import './.././../../../../domain/domain.dart';
 import './../../../../theme/theme.dart';
 import './../../notifications_presenter.dart';
 
-class NotificationTypeTileTitle extends StatelessWidget {
+class NotificationTypeTileTitleWidget extends StatelessWidget {
   final NotificationTypeEntity notificationType;
   final Color? textColor;
 
-  const NotificationTypeTileTitle({
+  const NotificationTypeTileTitleWidget({
     Key? key,
     required this.notificationType,
     this.textColor,

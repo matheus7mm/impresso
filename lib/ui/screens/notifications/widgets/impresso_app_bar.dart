@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import './../../../theme/theme.dart';
 
-import './svg_icon.dart';
+import './svg_icon_widget.dart';
 
 class ImpressoAppBar {
   static PreferredSizeWidget get buildAppBar => AppBar(
@@ -18,22 +18,22 @@ class ImpressoAppBar {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const SvgIcon(
+              const SvgIconWidget(
                 assetPath: MainAssets.backArrowSvg,
               ),
               Expanded(
                 child: Container(),
               ),
-              const SvgIcon(
+              const SvgIconWidget(
                 assetPath: MainAssets.settingsSvg,
               ),
-              const SvgIcon(
+              const SvgIconWidget(
                 assetPath: MainAssets.editSvg,
               ),
-              const SvgIcon(
+              const SvgIconWidget(
                 assetPath: MainAssets.booksSvg,
               ),
-              const SvgIcon(
+              const SvgIconWidget(
                 assetPath: MainAssets.shareSvg,
               ),
             ],
