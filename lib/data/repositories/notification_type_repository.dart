@@ -182,4 +182,16 @@ class NotificationTypeRepository {
       unreadNotificationsCount: count,
     );
   }
+
+  void setNotificationTypeOnTop({
+    required int notificationTypeId,
+  }) {
+    NotificationTypeEntity notificationType = notificationTypeList.firstWhere(
+        (notificationType) => notificationType.id == notificationTypeId);
+
+    final index = notificationTypeList.indexOf(notificationType);
+
+    notificationTypeList.removeAt(index);
+    notificationTypeList.insert(0, notificationType);
+  }
 }

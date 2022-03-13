@@ -1,6 +1,6 @@
 abstract class SetNotificationAsRead {
   void set({
-    required notificationTypeId,
-    required notificationId,
+    required int notificationTypeId,
+    required int notificationId,
   });
 }

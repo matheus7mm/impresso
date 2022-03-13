@@ -1,1 +1,1 @@
-export 'local_set_notification_as_read.dart';
+export './local_set_notification_as_read.dart';

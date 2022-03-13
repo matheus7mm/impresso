@@ -16,6 +16,7 @@ class NotificationsPresenter {
   final FetchNotificationType fetchNotificationType;
   final SetNotificationAsRead setNotificationAsRead;
   final LoadNotificationTypeUnreadCount loadNotificationTypeUnreadCount;
+  final SetNotificationTypeOnTop setNotificationTypeOnTop;
 
   static late NotificationsState state;
 
@@ -23,6 +24,7 @@ class NotificationsPresenter {
     required this.fetchNotificationType,
     required this.setNotificationAsRead,
     required this.loadNotificationTypeUnreadCount,
+    required this.setNotificationTypeOnTop,
   }) {
     state = NotificationsState(
       notificationTypeList: fetchNotificationType.fetchAll(),
@@ -38,13 +40,7 @@ class NotificationsPresenter {
     state.selectedNotificationTypeId = id;
 
     // put the NotificationType selected as first element in the list
-    NotificationTypeEntity notificationType = getNotificationTypeList
-        .firstWhere((notificationType) => notificationType.id == id);
-
-    final index = getNotificationTypeList.indexOf(notificationType);
-
-    getNotificationTypeList.removeAt(index);
-    getNotificationTypeList.insert(0, notificationType);
+    setNotificationTypeOnTop.set(notificationTypeId: id);
 
     _update();
   }

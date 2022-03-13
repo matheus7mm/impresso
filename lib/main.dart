@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
         NotificationTypeRepository();
 
     return MaterialApp(
-      title: 'Impresso Test',
+      title: 'IMPRESSO Test',
       debugShowCheckedModeBanner: false,
       home: NotificationsScreen(
         presenter: NotificationsPresenter(
@@ -40,6 +40,9 @@ class _MyAppState extends State<MyApp> {
             repository: notificationTypeRepository,
           ),
           loadNotificationTypeUnreadCount: LocalLoadNotificationTypeUnreadCount(
+            repository: notificationTypeRepository,
+          ),
+          setNotificationTypeOnTop: LocalSetNotificationTypeOnTop(
             repository: notificationTypeRepository,
           ),
         ),
