@@ -71,6 +71,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               ),
               NotificationTypeListWidget(
                 expandedHeight: expandedHeight,
+                presenter: widget.presenter,
               ),
             ],
           ),
