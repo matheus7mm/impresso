@@ -8,8 +8,8 @@ class LocalSetNotificationAsRead implements SetNotificationAsRead {
 
   @override
   void set({
-    required notificationTypeId,
-    required notificationId,
+    required int notificationTypeId,
+    required int notificationId,
   }) {
     repository.updateHasBeenRead(
       hasBeenRead: true,

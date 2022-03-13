@@ -8,7 +8,7 @@ class LocalSetNotificationTypeOnTop implements SetNotificationTypeOnTop {
 
   @override
   void set({
-    required notificationTypeId,
+    required int notificationTypeId,
   }) {
     repository.setNotificationTypeOnTop(
       notificationTypeId: notificationTypeId,
