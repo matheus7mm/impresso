@@ -33,8 +33,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         mediaQuery.padding.bottom -
         appBar.preferredSize.height;
 
-    final double pictureSize =
+    double pictureSize =
         (width - (2 * NotificationsConfig.horizontalPadding)) * 0.3;
+
+    if (pictureSize >= (mediaQuery.size.height * 0.4)) {
+      pictureSize = bodyHeight * 0.2;
+    }
 
     final double expandedHeight = bodyHeight -
         pictureSize -

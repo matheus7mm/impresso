@@ -29,8 +29,8 @@ class HeaderWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Flexible(
-            flex: 7,
+          Expanded(
+            flex: 6,
             child: SingleChildScrollView(
               controller: ScrollController(),
               child: Column(
@@ -68,9 +68,11 @@ class HeaderWidget extends StatelessWidget {
               ),
             ),
           ),
-          Flexible(
-            flex: 2,
+          Expanded(
+            flex: 5,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Spacer(
                   flex: 2,
@@ -98,16 +100,13 @@ class HeaderWidget extends StatelessWidget {
                 const Spacer(
                   flex: 1,
                 ),
+                AvatarWidget(
+                  url: pictureUrl,
+                  avatarSize: pictureSize,
+                ),
               ],
             ),
           ),
-          Flexible(
-            flex: 4,
-            child: AvatarWidget(
-              url: pictureUrl,
-              avatarSize: pictureSize,
-            ),
-          )
         ],
       ),
     );
