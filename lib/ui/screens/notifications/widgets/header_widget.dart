@@ -70,21 +70,34 @@ class HeaderWidget extends StatelessWidget {
           ),
           Flexible(
             flex: 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                SizedBox(
-                  height: pictureSize * 0.2,
+                const Spacer(
+                  flex: 2,
                 ),
-                Row(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: pictureSize * 0.2,
+                    ),
+                    Row(
+                      children: [
+                        SvgPicture.asset(NotificationsAssets.checkSvg),
+                        const SizedBox(
+                          width: 2,
+                        ),
+                        SvgPicture.asset(NotificationsAssets.s1Svg),
+                      ],
+                    ),
                     SvgPicture.asset(NotificationsAssets.checkSvg),
-                    SvgPicture.asset(NotificationsAssets.s1Svg),
+                    SvgPicture.asset(NotificationsAssets.checkSvg),
                   ],
                 ),
-                SvgPicture.asset(NotificationsAssets.checkSvg),
-                SvgPicture.asset(NotificationsAssets.checkSvg),
+                const Spacer(
+                  flex: 1,
+                ),
               ],
             ),
           ),
