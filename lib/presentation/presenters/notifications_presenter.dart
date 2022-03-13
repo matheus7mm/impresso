@@ -3,9 +3,12 @@ import 'dart:async';
 import './../../domain/domain.dart';
 
 class NotificationsState {
-  NotificationsState({required this.notificationTypeList});
+  NotificationsState({
+    required this.notificationTypeList,
+    required this.selectedNotificationTypeId,
+  });
 
-  int selectedNotificationTypeId = 1;
+  int selectedNotificationTypeId;
   List<NotificationTypeEntity> notificationTypeList;
 }
 
@@ -22,7 +25,9 @@ class NotificationsPresenter {
     required this.loadNotificationTypeUnreadCount,
   }) {
     state = NotificationsState(
-        notificationTypeList: fetchNotificationType.fetchAll());
+      notificationTypeList: fetchNotificationType.fetchAll(),
+      selectedNotificationTypeId: fetchNotificationType.fetchAll().first.id,
+    );
   }
 
   final _controller = StreamController<NotificationsState>.broadcast();
