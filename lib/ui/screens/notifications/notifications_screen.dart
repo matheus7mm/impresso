@@ -77,6 +77,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
                 notificationTileList.add(
                   NotificationTypeTile(
+                    key: GlobalKey(),
                     notificationType: notificationTypeList[i],
                     showSidedBorder: i == 0 ? false : true,
                     showBottomBorder:
@@ -122,5 +123,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    widget.presenter.dispose();
+    super.dispose();
   }
 }
