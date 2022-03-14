@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'IMPRESSO Test',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'OpenSans'),
       home: NotificationsScreen(
         presenter: StreamNotificationsPresenter(
           fetchNotificationType: LocalFetchNotificationType(
