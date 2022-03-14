@@ -58,18 +58,6 @@ class StreamNotificationsPresenter implements NotificationsPresenter {
       .distinct();
 
   @override
-  Stream<NotificationTypeEntity> notificationTypeStream({
-    required int notificationTypeId,
-  }) =>
-      _controller.stream
-          .map(
-            (state) => state.notificationTypeList.firstWhere(
-                (notificationType) =>
-                    notificationType.id == notificationTypeId),
-          )
-          .distinct();
-
-  @override
   Stream<int> unreadNotificationsCountStream({
     required int notificationTypeId,
   }) =>

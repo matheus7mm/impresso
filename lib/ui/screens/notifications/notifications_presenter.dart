@@ -9,10 +9,6 @@ abstract class NotificationsPresenter {
 
   Stream<int> get selectedNotificationTypeIdStream;
 
-  Stream<NotificationTypeEntity> notificationTypeStream({
-    required int notificationTypeId,
-  });
-
   Stream<int> unreadNotificationsCountStream({
     required int notificationTypeId,
   });
